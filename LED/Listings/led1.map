@@ -250,8 +250,8 @@ Image Symbol Table
     i.SystemInit                             0x00000280   Section        0  system_msp432p4111.o(i.SystemInit)
     i.delayMs                                0x00000314   Section        0  blink.o(i.delayMs)
     i.main                                   0x00000328   Section        0  blink.o(i.main)
-    x$fpl$fpinit                             0x00000384   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x00000384   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x00000380   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x00000380   Number         0  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
     HEAP                                     0x20000060   Section        0  startup_msp432p4111_uvision.o(HEAP)
     STACK                                    0x20000060   Section      512  startup_msp432p4111_uvision.o(STACK)
@@ -410,12 +410,12 @@ Image Symbol Table
     __semihosting_library_function           0x0000027f   Thumb Code     0  indicate_semi.o(.text)
     SystemInit                               0x00000281   Thumb Code   122  system_msp432p4111.o(i.SystemInit)
     delayMs                                  0x00000315   Thumb Code    20  blink.o(i.delayMs)
-    main                                     0x00000329   Thumb Code    88  blink.o(i.main)
-    _fp_init                                 0x00000385   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0000038d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0000038d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x00000390   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000003a0   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00000329   Thumb Code    84  blink.o(i.main)
+    _fp_init                                 0x00000381   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x00000389   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x00000389   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x0000038c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000039c   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000060   Data           0  libspace.o(.bss)
 
@@ -427,9 +427,9 @@ Memory Map of the image
 
   Image Entry point : 0x000001c9
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000003a0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x0000039c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000003a0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000039c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -491,18 +491,18 @@ Memory Map of the image
     0x0000027e   0x0000027e   0x00000002   PAD
     0x00000280   0x00000280   0x00000094   Code   RO           77    i.SystemInit        system_msp432p4111.o
     0x00000314   0x00000314   0x00000014   Code   RO            4    i.delayMs           blink.o
-    0x00000328   0x00000328   0x0000005c   Code   RO            5    i.main              blink.o
-    0x00000384   0x00000384   0x0000000a   Code   RO          200    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0000038e   0x0000038e   0x00000002   PAD
-    0x00000390   0x00000390   0x00000010   Data   RO          268    Region$$Table       anon$$obj.o
+    0x00000328   0x00000328   0x00000058   Code   RO            5    i.main              blink.o
+    0x00000380   0x00000380   0x0000000a   Code   RO          200    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0000038a   0x0000038a   0x00000002   PAD
+    0x0000038c   0x0000038c   0x00000010   Data   RO          268    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000003a0, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0000039c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x000003a0, Size: 0x00000260, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x0000039c, Size: 0x00000260, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -518,12 +518,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       112          4          0          0          0       2393   blink.o
+       108          4          0          0          0       2397   blink.o
         60         22        324          0        512        916   startup_msp432p4111_uvision.o
        148         26          0          0          0        541   system_msp432p4111.o
 
     ----------------------------------------------------------------------
-       320         52        340          0        512       3850   Object Totals
+       316         52        340          0        512       3854   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -573,15 +573,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       588         68        340          0        608       4226   Grand Totals
-       588         68        340          0        608       4226   ELF Image Totals
-       588         68        340          0          0          0   ROM Totals
+       584         68        340          0        608       4230   Grand Totals
+       584         68        340          0        608       4230   ELF Image Totals
+       584         68        340          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  928 (   0.91kB)
+    Total RO  Size (Code + RO Data)                  924 (   0.90kB)
     Total RW  Size (RW Data + ZI Data)               608 (   0.59kB)
-    Total ROM Size (Code + RO Data + RW Data)        928 (   0.91kB)
+    Total ROM Size (Code + RO Data + RW Data)        924 (   0.90kB)
 
 ==============================================================================
 
